@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "convex deploy --cmd-url-env-var-name NEXT_PUBLIC_CONVEX_URL",
     "build": "next build",
+    "convex:deploy": "convex deploy",
+    "convex:dev": "convex dev",
+    "predev": "convex dev --once --configure=new",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
@@ -46,11 +50,12 @@
     "tw-animate-css": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8.5",
-    "tailwindcss": "4.1.16",
+    "tailwindcss": "^4.1.9",
     "typescript": "^5"
   }
 }
